@@ -6,9 +6,9 @@ The sync.WaitGroup is used to wait for a collection of goroutines to finish exec
 
 A goroutine is a lightweight thread of execution. When you launch multiple goroutines, the main function could finish executing before all goroutines complete, especially if they are running concurrently.
 sync.WaitGroup helps track the number of goroutines that need to finish:
-Add(n): Increments the counter by n for the number of goroutines being launched.
-Done(): Decrements the counter for each goroutine when it completes.
-Wait(): Blocks the main function (or any function) until the counter reaches zero, ensuring all tasks are finished.
+- **Add(n)**: Increments the counter by n for the number of goroutines being launched.
+- **Done()**: Decrements the counter for each goroutine when it completes.
+- **Wait()**: Blocks the main function (or any function) until the counter reaches zero, ensuring all tasks are finished.
 In your example, wg.Add(1) increments the counter for each goroutine. After the task completes, wg.Done() is called to decrement the counter. The wg.Wait() at the end makes sure the main function waits until all goroutines are done before exiting.
 
 ## 2. Why Use Concurrency Control (Semaphore)?
