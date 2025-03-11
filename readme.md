@@ -1,4 +1,5 @@
 ## 1. Why Use sync.WaitGroup?
+
 The sync.WaitGroup is used to wait for a collection of goroutines to finish executing before the main function exits. Without it, the main function might terminate before all goroutines have completed their tasks, potentially causing incomplete execution.
 
 ### Explanation:
